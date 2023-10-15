@@ -21,7 +21,7 @@ class Books(http.Controller):
             'description': kw.get('description'),
             'company': kw.get('company')
         })
-        return request.redirect('/books')
+        return request.redirect('/')
 
     @http.route('/update', auth='public', type='http', website=True)
     def redirect_to_form_update(self, **kw):
@@ -40,11 +40,11 @@ class Books(http.Controller):
             'description': kw.get('description'),
             'company': kw.get('company')
         })
-        return request.redirect('/books')
+        return request.redirect('/')
 
     @http.route('/delete', auth='public', type='http', website=True)
-    def update_book(self, **kw):
+    def delete_book(self, **kw):
         book_id = int(kw.get('id'))
         request.env['book.book'].search([('id', '=', book_id)]).unlink()
-        return request.redirect('/books')
+        return request.redirect('/')
 
