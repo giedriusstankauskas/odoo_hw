@@ -44,6 +44,5 @@
         <field name="view_id" ref="view_print_books_form"/>
         <field name="target">new</field>
     </record>
-
-
+    
 </odoo>
