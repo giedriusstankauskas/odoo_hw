@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="display_books" name="Books">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1><i class="fa fa-book"/> Knygos ir dokumentai</h1>
+                <a href="/books/create"><i class="fa fa-plus-circle"/>Pridėti naują įrašą</a>
+                <br/>
+                <br/>
+
+                <table border="1" width="700">
+                    <thead>
+                        <tr>
+                            <th>Pavadinimas</th>
+                            <th>Aprašymas</th>
+                            <th>Įmonė</th>
+                            <th>Koreguoti</th>
+                            <th>Ištrinti</th>
+                        </tr>
+                    </thead>
+
+                    <t t-foreach="books" t-as="book">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <t t-esc="book.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="book.description"/>
+                                </td>
+                                <td>
+                                    <t t-esc="book.company.name"/>
+                                </td>
+                                <td>
+                                    <a t-attf-href="/update?id=#{book.id}"><i class="fa fa-pencil"/></a>
+                                </td>
+                                <td>
+                                    <a t-attf-href="/delete?id=#{book.id}"><i class="fa fa-trash"/></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </t>
+
+                </table>
+
+
+            </div>
+        </t>
+    </template>
+</odoo>

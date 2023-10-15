@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="book_form_view" model="ir.ui.view">
+        <field name="name">Books</field>
+        <field name="model">book.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="company"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="book_tree_view" model="ir.ui.view">
+        <field name="name">Books</field>
+        <field name="model">book.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">book.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="print_books" model="ir.actions.act_window">
+        <field name="name">Print</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">print.book.wizard</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="book_menu" name="Books" action="action_book"/>
+
+    <menuitem id="menu_print_books" name="Filtruoti pagal data" action="action_print_books"/>
+
+    <menuitem id="book_menu" name="Books" action="action_book"/>
+</odoo>

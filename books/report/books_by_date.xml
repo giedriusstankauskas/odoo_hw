@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_books_by_date">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div>
+
+                        <a href="/"><i class="fa fa-arrow-left"/> Grįžti į visą knygų sąrašą</a>
+
+                        <h2>Knygos atitinkančios datos parametrus:</h2>
+
+                        <table width="700">
+                            <thead>
+                                <tr>
+                                    <th>Pavadinimas</th>
+                                    <th>Aprašymas</th>
+                                    <th>Įmonė</th>
+                                    <th>Sukūrimo data</th>
+                                </tr>
+                            </thead>
+
+                            <t t-foreach="books" t-as="book">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <t t-esc="book['name']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="book['description']"/>
+                                        </td>
+                                        <td>
+                                            <t t-if="book['company']">
+                                                <t t-esc="book['company'][1]"/>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-esc="book['create_date']"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </t>
+                        </table>
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>
