@@ -2,7 +2,7 @@
 ## Pagrindinė užduotis
 <hr>
 Namų ekranas<br>
-<img src="books/readme_images/odoo1.png" width="600">
+<img src="books/readme_images/odoo1.png" width="700">
 <hr>
 Paspaudus Website > Books atsidaro įrašų sąrašas<br>
 <img src="books/readme_images/odoo2.png" width="700">
